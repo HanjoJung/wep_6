@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p>
+		A1<input type="checkbox" class="ch" onclick="check()">
+	</p>
+	<p>
+		A2<input type="checkbox" class="ch" onclick="check()">
+	</p>
+	<p>
+		A3<input type="checkbox" class="ch" onclick="check()">
+	</p>
+	<p>
+		A4<input type="checkbox" class="ch" onclick="check()">
+	</p>
+	<p>
+		ALL<input type="checkbox" id="a" onclick="checkall()">
+	</p>
+	<p>
+		<input type="button" value="CLICK" onclick="go()">
+	</p>
+
+	<script type="text/javascript">
+		function check() {
+			var c = document.getElementsByClassName("ch");
+			var check = true;
+			for (var i = 0; i < c.length; i++) {
+				if (!c[i].checked)
+					check = false;
+			}
+			a.checked = check;
+		}
+
+		function checkall() {
+			var c = document.getElementsByClassName("ch");
+			if (a.checked) {
+				for (var i = 0; i < c.length; i++) {
+					c[i].checked = true;
+				}
+			} else if (!a.checked) {
+				for (var i = 0; i < c.length; i++) {
+					c[i].checked = false;
+				}
+			}
+		}
+		function go() {
+			var c = document.getElementsByClassName("ch");
+			var message = "OK";
+			for (var i = 0; i < c.length; i++) {
+				if (!c[0].checked) {
+					message = "fail";
+					break;
+				}
+			}
+			alert(message);
+		}
+	</script>
+</body>
+</html>

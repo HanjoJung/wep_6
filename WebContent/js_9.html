@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.t tr td {
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	margin: 0px;
+}
+</style>
+</head>
+<body>
+
+	NUM1
+	<input type="text" id="num1"> Operator
+	<input type="text" id="op" value="+"> NUM2
+	<input type="text" id="num2"> =
+	<input type="text" id="result">
+	<input type="button" value="CLICK" onclick="go()">
+	<hr>
+	<div>
+		<input type="text" id="count1"> <input type="text" id="count2">
+		<input type="button" value="Click" onclick="table()">
+		<div id="result2"></div>
+	</div>
+	<script type="text/javascript">
+		function go() {
+			var n1 = num1.value;
+			var oper = op.value;
+			var n2 = num2.value;
+			var result = 0;
+			if (op.value == "+") {
+				result = (num1.value * 1) + (num2.value * 1);
+			} else if (op.value == "-") {
+				result = num1.value - num2.value;
+			} else if (op.value == "*") {
+				result = num1.value * num2.value;
+			} else if (op.value == "/") {
+				result = num1.value / num2.value;
+			} else if (op.value == "%") {
+				result = num1.value % num2.value;
+			}
+			document.getElementById(result).value = result;
+		}
+
+		function table() {
+			var c1 = count1.value;
+			var c2 = count2.value;
+			var inner = "";
+			inner = "<table class='t'>";
+			for (var i = 0; i < c1; i++) {
+				inner += "<tr>";
+				for (var j = 0; j < c2; j++) {
+					inner += "<td></td>";
+				}
+				inner += "</tr>";
+			}
+			inner += "</table>";
+			result2.innerHTML = inner;
+		}
+	</script>
+</body>
+</html>

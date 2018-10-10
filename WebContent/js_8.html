@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.s1 {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+}
+
+.s2 {
+	width: 200px;
+	height: 200px;
+	background-color: red;
+}
+</style>
+</head>
+<body>
+	<div id="d1" class="s1"></div>
+	<script type="text/javascript">
+	var c = confirm("Change?");
+	var d = document.getElementById("d1");
+	if(c){
+		d.className = "s2";
+	}
+	</script>
+</body>
+</html>

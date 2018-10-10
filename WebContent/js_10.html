@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p class="p1">content1</p>
+	<p class="p1">content2</p>
+	<p class="p1">content3</p>
+
+	<div>
+		<input type="checkbox" class="test" name="t" value="t1" checked="checked"> <input
+			type="checkbox" class="test" name="t" value="t2"> <input
+			type="checkbox" class="test" name="t" value="t3"> <input
+			type="checkbox" class="test" name="t" value="t4"> <input
+			type="button" value="CLICK" id="btn" onclick="go()">
+	</div>
+	<script type="text/javascript">
+		var p = document.getElementsByClassName("p1");
+		for (var i = 0; i < p.length; i++) {
+			/* alert(p[i].innerHTML); */
+		}
+
+		function go() {
+			var t = document.getElementsByClassName("test");
+			for (var i = 0; i < t.length; i++) {
+				if(t[i].checked){
+				alert(t[i].value);}
+			}
+		}
+	</script>
+</body>
+</html>

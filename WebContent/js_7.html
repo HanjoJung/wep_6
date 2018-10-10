@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="d1">
+		<p>Text</p>
+	</div>
+	<div>
+		<input type="text" value="test" id="d2">
+	</div>
+
+	<div id="d3"></div>
+
+	<script type="text/javascript">
+		var d1 = document.getElementById("d1");
+		var v = d1.innerHTML;
+		alert(v);
+		d1.innerHTML = "<h1>change</h1>";
+
+		var d2 = document.getElementById("d2");
+		var t = d2.type;
+		alert(t);
+		d2.type = "button"
+
+		var num = window.prompt("숫자를 입력하세요")
+		var d3 = document.getElementById("d3");
+		for (var i = 0; i < num; i++) {
+			d3.innerHTML += '<input type="button" value="test">';
+		}
+	</script>
+</body>
+</html>
