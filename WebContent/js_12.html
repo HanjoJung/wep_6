@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function go(num) {
+		var result = cal(num);
+		alert(result);
+		f();
+	}
+	
+	function cal(num2) {
+		return num2*3;
+	}
+	//익명함수
+	//함수를 변수에 대입하거나
+	//한 번 실행하고 싶을 때 .. 이벤트 발생시
+	var f = function () {
+		alert('익명함수 호출');		
+	}
+</script>
+</head>
+<body>
+	<button onclick="go(1)">CLICK</button>
+	<button onclick="go(2)">CLICK</button>
+	
+</body>
+</html>

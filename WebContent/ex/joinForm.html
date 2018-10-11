@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#d1 {
+	width: 100%;
+	padding-top: 200px;
+	text-align: center;
+}
+
+#d1 form {
+	text-align: right;
+	width: 300px;
+	display: inline-block;
+}
+</style>
+<script type="text/javascript">
+	onload = function() {
+		var s = document.getElementById("search");
+		s.addEventListener("click", function() {
+			idSearch = open("./idSearch.html", "",
+					"width=200,height=200,top=250,left=200");
+		})
+
+		var pw = document.getElementById("pw");
+		var rpw = document.getElementById("rpw");
+		var pwc = document.getElementById("pwcheck");
+		rpw.addEventListener("keyup", function() {
+			if (pw.value != rpw.value) {
+				pwc.style.color = "red";
+				pwc.innerHTML = "불일치";
+			} else {
+				pwc.style.color = "blue";
+				pwc.innerHTML = "사용가능";
+			}
+		})
+	}
+</script>
+</head>
+<body>
+	<!-- 회원가입 폼 -->
+	<!-- id, pw, pw2, name, sex, email -->
+	<div id="d1">
+		<form action="">
+			<p style="margin-bottom: 0">
+				ID <input type="text" id="id" disabled="disabled">
+			<p style="margin-top: 1px">
+				<input id="search" type="button" value="중복확인">
+			<p>
+				Password <input type="password" id="pw">
+			</p>
+			<p>
+				rePassword <input type="password" id="rpw">
+			</p>
+			<p id="pwcheck"></p>
+			<p>
+				Name <input type="text">
+			</p>
+			<p>
+				남 <input type="radio" name="sex"> 여 <input type="radio"
+					name="sex">
+			</p>
+			<p>
+				email <input type="text">
+			</p>
+			<button type="submit">가입</button>
+		</form>
+	</div>
+</body>
+</html>

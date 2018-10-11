@@ -19,7 +19,7 @@
 		A4<input type="checkbox" class="ch" onclick="check()">
 	</p>
 	<p>
-		ALL<input type="checkbox" id="a" onclick="checkall()">
+		ALL<input type="checkbox" id="a" onclick="setall()">
 	</p>
 	<p>
 		<input type="button" value="CLICK" onclick="go()">
@@ -30,34 +30,34 @@
 			var c = document.getElementsByClassName("ch");
 			var check = true;
 			for (var i = 0; i < c.length; i++) {
-				if (!c[i].checked)
+				if (!c[i].checked) {
 					check = false;
+					break;
+				}
 			}
-			a.checked = check;
+			document.getElementById("a").checked = check;
 		}
 
-		function checkall() {
+		function setall() {
 			var c = document.getElementsByClassName("ch");
-			if (a.checked) {
-				for (var i = 0; i < c.length; i++) {
-					c[i].checked = true;
-				}
-			} else if (!a.checked) {
-				for (var i = 0; i < c.length; i++) {
-					c[i].checked = false;
-				}
+			for (var i = 0; i < c.length; i++) {
+				c[i].checked = a.checked;
 			}
 		}
 		function go() {
 			var c = document.getElementsByClassName("ch");
-			var message = "OK";
+			var check = true;
 			for (var i = 0; i < c.length; i++) {
-				if (!c[0].checked) {
-					message = "fail";
+				if (c[i].checked) {
+					check = !check;
 					break;
 				}
 			}
-			alert(message);
+			if (check) {
+				location.href = "./js_13.html";
+			} else {
+				location.reload();
+			}
 		}
 	</script>
 </body>

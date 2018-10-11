@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload = function() {
+
+		var b = document.getElementById("btn");
+		var b2 = document.getElementById("btn2");
+		var b3 = document.getElementById("btn3");
+		var c = document.getElementById("c");
+		var c2 = document.getElementById("c2");
+		var i = 1;
+		var slide;
+		b.addEventListener("click", function() {
+				c.src = "../images/hero(" + num() + ").png";
+		})
+		b2.addEventListener("click", function() {
+			clearInterval(slide);
+			slide = setInterval(function() {
+				c2.src = "../images/hero(" + num() + ").png";
+			}, 500);
+		})
+		function num() {
+			if (i == 27) {
+				i = 0;
+			}
+			return i++;
+		}
+
+		b3.addEventListener("click", function() {
+			clearInterval(slide);
+		})
+
+	}
+</script>
+</head>
+<body>
+	<div id="i">
+		<img id="c" alt="" src="../images/hero(0).png">
+	</div>
+	<button id="btn">CLICK</button>
+	<hr>
+	<div id="i2">
+		<img id="c2" alt="" src="../images/hero(0).png">
+	</div>
+	<button id="btn2">STRAT</button>
+	<button id="btn3">STOP</button>
+</body>
+</html>

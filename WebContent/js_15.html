@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload = function() {
+		var b = document.getElementById("btn");
+		b.addEventListener("click",function(){
+			mywindow = open("./js_15_2.html","new page","width=200,height=200,top=200,left=300");
+		})
+		var b2 = document.getElementById("btn2");
+		b2.addEventListener("click",function(){
+			close();
+		})
+		
+	}
+</script>
+</head>
+<body>
+
+	<button id="btn">CLICK</button>
+	<button id="btn2">CLICK</button>
+
+</body>
+</html>

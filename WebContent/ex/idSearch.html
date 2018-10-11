@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload = function() {
+		var c = document.getElementById("use");
+		c.addEventListener("click", go);
+
+		function go() {
+			var t = document.getElementById("t").value;
+			opener.document.getElementById("id").value = t;
+			close();
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="">
+		<p>
+			<input type="text" id="t"><input type="button" value="search">
+		</p>
+		<p>
+			<input id="use" type="button" value="사용">
+		</p>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		var btn1 = document.getElementById("btn1");
+		/* btn1.onclick = function() {
+			alert(btn1.innerHTML)	
+		} */
+
+		btn1.addEventListener("click", function() {
+			alert(btn1.innerHTML)
+		});
+
+		var pw = document.getElementsByClassName("pw");
+		var result = document.getElementById("result");
+
+		pw[1].addEventListener("blur", function() {
+			if (pw[0].value == pw[1].value) {
+				result.style.color = "blue";
+				result.innerHTML = "사용가능";
+			} else {
+				result.style.color = "red";
+				result.innerHTML = "사용 불가능";
+			}
+		})
+
+		var btn2 = document.getElementById("btn2");
+		btn2.addEventListener("click", function() {
+			/* window.location.reload(); */
+			location.href="https://www.naver.com";
+		})
+		
+		var btn3 = document.getElementById("btn3");
+		btn3.addEventListener("click", function() {
+			window.close();
+		})
+	}
+</script>
+</head>
+<body>
+	<input type="password" class="pw">
+	<input type="password" class="pw">
+	<div id="result">
+		<!-- 사용가능 (blue) -->
+		<!-- 사용 불가능 (red) -->
+	</div>
+	<button id="btn1">CLICK</button>
+	<button id="btn2">reload</button>
+	<button id="btn3">close</button>
+</body>
+</html>

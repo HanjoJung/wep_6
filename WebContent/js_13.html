@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#d1 {
+	width: 200px;
+	height: 300px;
+	background-color: red;
+	cursor: pointer;
+}
+
+#d2 {
+	width: 300px;
+	height: 300px;
+	background-color: blue;
+	display: none;
+}
+</style>
+<script type="text/javascript">
+	function go() {
+		alert("click")
+	}
+	function go2() {
+		var d1 = document.getElementById("d1");
+		d1.style.width = "800px";
+	}
+	function go22() {
+		var d1 = document.getElementById("d1");
+		d1.style.width = "200px";
+	}
+	function go3() {
+		var d2 = document.getElementById("d2");
+		d2.style.display = "block";
+	}
+	function go4() {
+		var d2 = document.getElementById("d2");
+		d2.style.display = "none";
+	}
+
+	function key1() {
+		alert("keyup");
+	}
+	function key2() {
+		alert("keydown");
+	}
+	function key3() {
+		alert("keypress");
+	}
+	function fo() {
+		alert("영어만 입력하세요")
+	}
+	function ch() {
+		alert("change")
+	}
+</script>
+</head>
+<body>
+
+	<div id="d1" onclick="go()" onmouseenter="go2()" onmouseleave="go22()"
+		onmouseover="go3()" onmouseout="go4"></div>
+	<div id="d2"></div>
+
+	<input type="text" onkeyup="key1()">
+	<input type="text" onkeydown="key2()">
+	<input type="text" onkeypress="key3()">
+	<input type="text" onblur="fo()">
+	<input type="text" onchange="ch()">
+
+</body>
+</html>
