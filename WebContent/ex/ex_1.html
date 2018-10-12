@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+/* 		var r1 = document.getElementById("r1");
+		var r2 = document.getElementById("r2"); */
+		var d1 = document.getElementById("d1");
+		var d2 = document.getElementById("d2");
+		var r = document.getElementsByClassName("r");
+		
+/* 		r1.addEventListener("click", function() {
+				d1.style.display = "block";
+				d2.style.display = "none";
+		})
+		r2.addEventListener("click", function() {
+				d2.style.display = "block";
+				d1.style.display = "none";
+		}) */
+		for (var i = 0; i < r.length; i++) {
+			r[i].addEventListener("click",function)
+		}
+		
+	}
+</script>
+</head>
+<body>
+
+	S
+	<input class="r" id="r1" type="radio" name="lebel" checked="checked">
+	<br> VIP
+	<input class="r" id="r2" type="radio" name="lebel">
+	<br>
+
+	<div id="d1">
+		<h1>S급</h1>
+	</div>
+	<div id="d2" style="display: none;">
+		<h1>VIP</h1>
+	</div>
+</body>
+</html>

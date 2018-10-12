@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var ar = [];
+	ar.push(1);
+	ar[1]=2;
+	ar[2]=3;
+	
+	/* for (var i = 0; i < ar.length; i++) {
+		alert(ar[i]);
+	} */
+	
+	ar.forEach(function() {
+		alert(this);
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

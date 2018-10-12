@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	onload = function() {
+		var btn = document.getElementById("btn");
+		var t = document.getElementsByClassName("form-control");
+		var id = document.getElementById("id");
+		var pw = document.getElementById("pw");
+		var pw2 = document.getElementById("pw2");
+		var email = document.getElementById("email");
+		var phone = document.getElementById("phone");
+		var check = document.getElementById("check");
+
+		btn.addEventListener("click", controll);
+
+		function controll() {
+			if (idCheck() && pwCheck() && emailCheck() && phoneCheck()
+					&& textCheck()) {
+				check.innerHTML = "성공";
+				check.style.color = "blue";
+			}
+		}
+
+		function textCheck() {
+			for (var i = 0; i < t.length; i++) {
+				if (t[i].value == "") {
+					check.innerHTML = "모든 항목을 기입해주세요";
+					check.style.color = "red";
+					return false;
+					break;
+				}
+			}
+			return true;
+		}
+
+		function idCheck() {
+			if (id.value.length < 6) {
+				check.innerHTML = "아이디는 6자 이상으로 입력해주세요";
+				check.style.color = "red";
+				return false;
+			}
+			return true;
+		}
+
+		function pwCheck() {
+			if (pw.value.length < 6) {
+				check.innerHTML = "암호는 6자 이상으로 입력해주세요";
+				check.style.color = "red";
+				return false;
+			} else if (pw.value != pw2.value) {
+				check.innerHTML = "암호가 일치하지 않습니다";
+				check.style.color = "red";
+				return false;
+			}
+			return true;
+		}
+
+		function emailCheck() {
+			for (var i = 0; i < email.value.length; i++) {
+				if (email.value.includes(".")) {
+					if (email.value.includes("@")) {
+						return true;
+					}
+				}
+			}
+			check.innerHTML = "올바른 형식으로 입력해주세요";
+			check.style.color = "red";
+			return false;
+		}
+		phone.addEventListener("keyup", function() {
+			if (!Number.isInteger(parseInt(phone.value
+					.charAt(phone.value.length - 1)))) {
+				check.innerHTML = "전화번호는 숫자만 입력해주세요";
+				check.style.color = "red";
+			} else if(phoneCheck()){
+				check.innerHTML = "";
+			}
+		})
+		function phoneCheck() {
+			for (var i = 0; i < phone.value.length; i++) {
+				if (!Number.isInteger(parseInt(phone.value[i]))) {
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+</script>
+<style type="text/css">
+#check {
+	font-size: 2.5rem;
+	float: right;
+}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<h2>Input Sizing</h2>
+		<p>빈칸이 없어야 함</p>
+		<p>PW는 두개가 일치하는지 확인</p>
+		<p>ID는 6글자 이상, PW는 6글자 이상</p>
+		<form>
+			<div class="form-group">
+				<label for="inputdefault">ID</label> <input class="form-control"
+					id="id" type="text" placeholder="6자 이상 입력">
+			</div>
+			<div class="form-group">
+				<label for="inputdefault">PASSWORD</label> <input
+					class="form-control " id="pw" type="password"
+					placeholder="6자 이상 입력">
+			</div>
+			<div class="form-group">
+				<label for="inputdefault">PASSWORD</label> <input
+					class="form-control " id="pw2" type="password"
+					placeholder="6자 이상 입력">
+			</div>
+			<div class="form-group">
+				<label for="inputdefault">NAME</label> <input class="form-control"
+					id="name" type="text">
+			</div>
+			<div class="form-group">
+				<label for="inputdefault">E-Mail</label> <input class="form-control"
+					id="email" type="text">
+			</div>
+			<div class="form-group">
+				<label for="inputdefault">PHONE</label> <input class="form-control"
+					id="phone" type="text" placeholder="-없이 11자리 숫자만 입력">
+			</div>
+			<div class="form-group">
+				<input class="btn btn-primary" id="btn" type="button" value="JOIN">
+				<p id="check"></p>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

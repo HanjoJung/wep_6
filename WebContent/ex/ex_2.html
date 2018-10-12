@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.p {
+	width: 180px;
+	height: 400px;
+	border: 1px solid red;
+	float: left;
+}
+
+#result {
+	width: 100%;
+	height: 400px;
+	background-color: yellow;
+	clear: both;
+	padding-top: 10px;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		var h = document.getElementsByClassName("h");
+		var hero = document.getElementsByClassName("hero");
+		var result = document.getElementById("result");
+		var b = document.getElementById("btn");
+
+		b.addEventListener("click", function() {
+			for (var i = 0; i < h.length; i++) {
+				if (h[i].checked) {
+					result.innerHTML = hero[i].innerHTML;
+					break;
+				}
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<div>
+		<div class="p">
+			<div>
+				<input class="h" type="radio" name="c" checked="checked" value="0">
+			</div>
+			<div class="hero">
+				<div>
+					<img alt="" src="../images/hero(0).png">
+					<h1>D.VA</h1>
+				</div>
+			</div>
+		</div>
+		<div class="p">
+			<div>
+				<input class="h" type="radio" name="c" value="1">
+			</div>
+			<div class="hero">
+				<div>
+					<img alt="" src="../images/hero(2).png">
+					<h1>라인하르트</h1>
+				</div>
+			</div>
+		</div>
+		<div class="p">
+			<div>
+				<input class="h" type="radio" name="c" value="2">
+			</div>
+			<div class="hero">
+				<div>
+					<img alt="" src="../images/hero(7).png">
+					<h1>바스티온</h1>
+				</div>
+			</div>
+		</div>
+		<div class="p">
+			<div>
+				<input class="h" type="radio" name="c" value="3">
+			</div>
+			<div class="hero">
+				<div>
+					<img alt="" src="../images/hero(10).png">
+					<h1>한조</h1>
+				</div>
+			</div>
+		</div>
+		<div class="p">
+			<button id="btn">CHECK</button>
+		</div>
+		<div id="result"></div>
+	</div>
+</body>
+</html>
