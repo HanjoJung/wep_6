@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var u = "www.naver.com";
+	var u2 = "http://www.naver.com";
+	var reg = /^www/;
+	
+	var result1 = reg.test(u);
+	var result2 = reg.test(u2);
+	
+	u = "index.html";
+	reg = /html$/;
+	
+	u = "p12345";
+	reg = /^\d+$/;
+	
+	u = "010-1234-1234"
+	reg = /^\d{3}[-]?\d{4}[-]?\d{4}$/;
+	
+	result1 = reg.test(u);
+	
+	alert(result1);
+</script>
+</head>
+<body>
+
+</body>
+</html>

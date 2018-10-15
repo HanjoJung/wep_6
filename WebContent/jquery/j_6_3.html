@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		var count = 1;
+		$("#btn").click(function() {
+			if (count > 4) {
+				alert("최대 5개 까지만");
+				return;
+			} else {
+				count++;
+				$('#f').append('<div id="d'+count+'"><input class="f" type="file"><span class="s" title="d'+count+'">X</span></div>');
+			}
+		});
+		$("#f").on("click", ".s", function(){
+			var id = $(this).attr("title");
+			$("#"+id).remove();
+			count--;
+		})
+	});
+</script>
+<style type="text/css">
+span {
+	color: red;
+	cursor: pointer;
+}
+
+input[type=file] {
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+
+	<div id="f">
+		<div id="d1">
+			<input class="f" type="file"><span class="s" title="d1">X</span>
+		</div>
+	</div>
+
+	<button id="btn">ADD</button>
+
+</body>
+</html>

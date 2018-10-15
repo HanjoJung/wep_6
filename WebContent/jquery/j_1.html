@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	/* window.onload = function() {
+		var btn = document.getElementById("button");
+		btn.addEventListener("click", function() {
+			alert("click");
+		})
+		
+		var checks = document.getElementsByClassName("check");
+		for (var i = 0; i < checks.length; i++) {
+			checks[i].addEventListener("click", function() {
+				alert(checks[i].value);
+			})
+		}
+	} */
+
+	/* $(document).ready(function() {
+		
+	}); */
+
+	$(function() {
+		$('#button').click(function() {
+			alert("click2");
+		});
+		$('.check').click(function() {
+			alert($(this).val());
+		})
+		/* $('#t').blur(function() {
+			alert("blur");
+		});
+		$('#t').change(function () {
+			alert("change");
+		}); */
+		$('#t').on({
+			blur : function() {
+				alert("blur");
+			},
+			change : function() {
+				alert("change");
+			}
+		})
+	});
+</script>
+</head>
+<body>
+
+	<div id="result"></div>
+	<button id="button">Button</button>
+
+	<hr>
+	<input type="checkbox" class="check" value="c1" name="c">
+	<input type="checkbox" class="check" value="c2" name="c">
+	<input type="checkbox" class="check" value="c3" name="c">
+	<input type="checkbox" class="check" value="c4" name="c">
+
+	<hr>
+	<input type="text" id="t">
+</body>
+</html>
